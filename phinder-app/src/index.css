@@ -1,0 +1,178 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: lightgoldenrodyellow
+}
+.foot{
+  background-color: darkslategrey;
+  color: lightgoldenrodyellow;
+  text-align: center;
+  margin-left: 25%;
+  margin-right: 25%
+}
+.coolNav{
+  text-align: center;
+  color: lightcyan;
+  font-size: 20px;
+}
+.ten{
+  text-align: center;
+  margin-bottom: 50px;
+}
+.recent{
+  text-align: center;
+}
+
+@media only screen and (max-width: 1500px)
+{.phHome{
+  display: block;
+  height: 450px;
+  width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  border: mediumblue solid 10px;
+
+}}
+
+@media only screen and (max-width: 850px)
+{.phHome{
+  
+  height: 350px;
+  width: 700px;
+}}
+
+@media only screen and (max-width: 600px)
+{.phHome{
+  
+  height: 250px;
+  width: 550px;
+}}
+.neato{
+  color: blue;
+  text-emphasis: Bold;
+  text-align: center;
+  font-size: 50px;
+}
+.phLogo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+.userSet{
+  display: inline-block;
+  justify-content: center;
+  text-align: center;
+  align-content: center;
+}
+.find{
+  background-color: darkslategrey;
+  color: whitesmoke
+}
+
+@media only screen and (max-width: 1500px)
+{.phSet{
+  display: block;
+  height: 450px;
+  width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  border: mediumblue solid 10px;
+
+}}
+
+@media only screen and (max-width: 850px)
+{.phSet{
+  
+  height: 350px;
+  width: 700px;
+}}
+
+@media only screen and (max-width: 600px)
+{.phSet{
+  
+  height: 250px;
+  width: 550px;
+}}
+@media only screen and (max-width: 1500px)
+{.phAbout{
+  display: block;
+  height: 450px;
+  width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  border: mediumblue solid 10px;
+
+}}
+
+@media only screen and (max-width: 850px)
+{.phAbout{
+  
+  height: 350px;
+  width: 700px;
+}}
+
+@media only screen and (max-width: 600px)
+{.phAbout{
+  
+  height: 250px;
+  width: 550px;
+}}
+.tites{
+  color: blue;
+  text-align: center;
+}
+.aboutNav{
+  text-align: center;
+  font-size: xx-large;
+}
+.divTrey{
+  text-align: center;
+}
+.divFishman{
+  text-align: center;
+}
+.divMike{
+  text-align: center;
+}
+.divPage{
+  text-align: center;
+}
+.phPage{
+  border: blue solid 10px;
+}
+.phiFish{
+  border: blue solid 10px;
+}
+.phTrey{
+  border: blue solid 10px;
+}
+.phMike{
+  border: blue solid 10px;
+}
+.pAbout{
+  text-align: center;
+  font-size: x-large;
+}
+.divAbout{
+  text-align: center;
+}
+.quoteAbout{
+  font-style: italic;
+}
+.titleSet{
+  text-align: center;
+  color: blue;
+  
+}
+.quoteSet{
+  text-align: center;
+  font-style: italic;
+}
+.quoteHome{
+  text-align: center;
+  font-size: 50px;
+  font-style: italic;
+  color: blue;
+}
