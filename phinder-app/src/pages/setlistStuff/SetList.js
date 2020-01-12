@@ -8,6 +8,7 @@ import phSet from './phSet.jpg'
 function SetList(){
     const [dates, setDates] = useState([])
     const [userLists, setUserLists] = useState([])
+    const [info, setInfo] = useState([])
     
     
     
@@ -22,7 +23,33 @@ function SetList(){
        axios.get(`https://vschool-cors.herokuapp.com?url=https://api.phish.net/v3/setlists/get?apikey=6CA549706137553C0AB9&showdate=${deets}`)
         .then(resp => {
            
+           //This was an epic battle to make this :) Thanks Eric
+            const preSetList = resp.data.response.data[0].setlistdata.split("set-label'>")
+           const nextSetList = preSetList.slice(1,preSetList.length)
+           const finalSetList = nextSetList.map(set => {
+               const parts = set.split("</span>")
+               console.log(parts)
+               const label = parts[0]
+               const prePartOne = parts[1].split("setlist-song'>")
+               const songs = prePartOne.slice(1,prePartOne.length).map(song => {
+                   return song.split("<")[0]
+               })
+               console.log(songs)
+
+                return{
+                    label, songs
+                    
+                }
+               
+           })
+            
+           //setting the state :)
+           console.log(preSetList.slice(1,preSetList.length))
             setUserLists(resp.data.response.data)
+            console.log(finalSetList)
+            setInfo(finalSetList)
+            
+            
             
         })
         .catch(err =>{
@@ -30,9 +57,29 @@ function SetList(){
         })
 
     }
-        //calling axios get with user provided date...
+        
     console.log(userLists)
-  
+    
+    //breking down the long string version 1.0
+    /*const songList = userLists.map(show =>{
+        
+       const x = []
+        x.push(show.setlistdata)
+        console.log(x)
+       return <div className="songster">
+            <ul>
+    <li>{x.map(song => {
+        console.log(song)
+        const y = []
+        const z =  song.split("'>")[1].split("</")[0]
+        y.push(z)
+        console.log(y)
+    }
+    )}</li>
+        </ul>
+        </div>
+    })*/
+
     return(
         <div>
             <h1 className="titleSet">P*H*I*N*D*E*R</h1>
@@ -48,17 +95,33 @@ function SetList(){
             />
             <button onClick={clicked} className="find">Find It!</button>
 
-        <div> 
-            <h1>{dates}</h1>   
+        
+        
+        <div className="stuff"> 
+            <h1>{dates}</h1>
+            <h1>=============</h1>   
             <div className="locale">{userLists.map(userList =>
             
             <div key={userList.showid}>
-                <h1>{userList.venue}</h1>
+            
+                <h1>{userList.venue.split(">")[1].split("<")[0]}</h1>
               <h2> **** {userList.short_date} ||  
                  {userList.location} ****</h2>
-            <h3>{userList.setlistdata}</h3>
-                </div>
+            
+             </div>   
             )}
+            <div>
+                <div className="hereWeGo">
+                    {info.map(stuff => 
+                        <div>
+                        <h1>{stuff.label}</h1>
+                        <ul>
+                            <li>{stuff.songs.map(s => <li>***{s}***</li>)}</li>
+                        </ul>
+                        </div>
+                    )}
+                </div>
+            </div>
                 
             </div>
      </div> 
